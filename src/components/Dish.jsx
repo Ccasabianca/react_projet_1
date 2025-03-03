@@ -1,11 +1,14 @@
-const Dish = ({ name, price, image }) => {
+import { Card } from "react-bootstrap";
+import "../dish.scss";
+
+function Dish({ name, price, image }) {
   return (
-    <div className="dish">
-      <img src={image} alt={name} style={{ width: "8rem" }} />
+    <Card className="dish">
+      <img src={image} alt={name} className="dish-img" />
       <h4>{name}</h4>
       <p>Prix: {price}€</p>
-    </div>
+    </Card>
   );
-};
+}
 
 export default Dish;

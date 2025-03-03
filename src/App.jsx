@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <div>
+      <div className="dish-container">
         <Dish
           name="Tacos à l’unité"
           price={3}
