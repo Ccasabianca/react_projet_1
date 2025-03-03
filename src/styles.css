@@ -12,13 +12,12 @@ a {
   text-decoration: none;
 }
 
-
 /* Header */
 
 header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* DishList */
@@ -37,7 +36,7 @@ header {
 
 /* Footer */
 
-.footer {
+footer {
   margin-top: 60vh;
   display: flex;
   justify-content: center;
