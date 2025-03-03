@@ -1,5 +1,7 @@
 body {
 font-size: 20px;
+margin: 0;
+padding: 0;
 }
 
 img {
@@ -27,7 +29,7 @@ li {
     color: white;
     }
 
-    .navlinks ul {
+    .navLinks ul {
         display: flex;
         flex-direction: row;
         gap: 1rem;
@@ -36,7 +38,7 @@ li {
     /* Footer */
 
     .footer {
-        margin-top: 70vh;
+        margin-top: 65vh;
         display: flex;
         justify-content: center;
         align-items: center;

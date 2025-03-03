@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <nav>
       <div className="footer">
-        <div>« Copyright Mexican Food 2024 ».</div>
+        <h4>Copyright Mexican Food 2024</h4>
       </div>
     </nav>
   );
