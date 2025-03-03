@@ -1,9 +1,9 @@
-export default function Footer() {
+function Footer() {
   return (
-    <nav>
       <div className="footer">
-        <h4>Copyright Mexican Food 2024</h4>
+        <p>Copyright Mexican Food 2024</p>
       </div>
-    </nav>
   );
 }
+
+export default Footer;

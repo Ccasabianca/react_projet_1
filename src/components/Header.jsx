@@ -1,23 +1,11 @@
-export default function Header() {
+function Header() {
   return (
-    <nav>
-      <div className="navbar">
-        <div className="navLinks">
-          <ul>
-            <li>
+      <header>
+
               <a href="index.html">Accueil</a>
-            </li>
-            <li>
-              <a href="#">Page 1</a>
-            </li>
-            <li>
-              <a href="#">Page 2</a>
-            </li>
-          </ul>
-        </div>
-        <h2>Header</h2>
         <img src="src\assets\imgheader.webp" alt="Logo" />
-      </div>
-    </nav>
+      </header>
   );
 }
+
+export default Header;
