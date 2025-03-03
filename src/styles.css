@@ -1,0 +1,45 @@
+body {
+font-size: 20px;
+}
+
+img {
+width: 10rem;
+}
+
+
+a {
+text-decoration: none;
+color: white;
+}
+
+li {
+    text-decoration: none;
+  list-style: none;
+}
+
+/* Header */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darkslateblue;
+    color: white;
+    }
+
+    .navlinks ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    /* Footer */
+
+    .footer {
+        margin-top: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: darkslateblue;
+        color: white;
+    }
