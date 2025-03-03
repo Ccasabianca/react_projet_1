@@ -1,8 +1,8 @@
 const Dish = ({ name, price, image }) => {
     return (
-      <div>
+      <div className="dish">
         <img src={image} alt={name} style={{ width: '100px' }} />
-        <h3>{name}</h3>
+        <h4>{name}</h4>
         <p>Prix: {price}€</p>
       </div>
     );
