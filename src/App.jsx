@@ -1,4 +1,3 @@
-import "./styles.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/header";
 import Dish from "./components/Dish";

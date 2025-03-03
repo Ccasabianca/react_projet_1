@@ -1,13 +1,16 @@
 .dish-container {
+  padding: 50px 0 50px 0;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
 .dish {
-  width: 250px;
-}
-
-.dish-img {
-  width: 8rem;
-}
+    max-width: 400px;
+  }
+  
+  .dish-img {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 2px;
+  }
