@@ -1,12 +1,12 @@
-import { Navbar, Container } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import logo from '../assets/images/imgheader.webp';
 import "../assets/styles/header.scss";
 
 function Header() {
   return (
     <header>
-      <Navbar bg="light">
-        <Container>
+    <Navbar expand="lg" className="bg-body-tertiary">
+    <Container>
           <Navbar.Brand>
             <img
               className="logo"
@@ -15,9 +15,14 @@ function Header() {
               height="50"
             />
           </Navbar.Brand>
-          <a href="index.html">Accueil</a>
-        </Container>
-      </Navbar>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ms-auto">
+            <Nav.Link href="index.html">Accueil</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     </header>
   );
 }
