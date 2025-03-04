@@ -12,9 +12,7 @@ function Dish({ name, price, image, isNew }) {
       <Card.Img variant="top" src={image} alt={name} className="dish-img" />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
-        <Card.Text>
-          Prix: {price}€
-        </Card.Text>
+        <Card.Text>Prix: {price}€</Card.Text>
       </Card.Body>
     </Card>
   );
