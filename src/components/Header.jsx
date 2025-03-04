@@ -1,6 +1,6 @@
 import { Navbar, Container } from "react-bootstrap";
 import logo from '../assets/images/imgheader.webp';
-import "../header.scss";
+import "../assets/styles/header.scss";
 
 function Header() {
   return (
