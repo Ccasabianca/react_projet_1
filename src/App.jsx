@@ -6,9 +6,14 @@ import Dish from "./components/Dish";
 import Footer from "./components/Footer";
 
 function App() {
+  // Panier
+  const [cartCount, setCartCount] = useState(0);
+  const addToCart = () => {
+    setCartCount((prev) => prev + 1);
+  };
 
+  // Bouton new
   const [showNewOnly, setShowNewOnly] = useState(false);
-
   const handleShowNewOnly = () => {
     setShowNewOnly((prev) => !prev);
   };
@@ -44,12 +49,12 @@ function App() {
   ];
 
   const filteredDishes = dishes
-  .filter((dish) => dish.inStock > 0)
-  .filter((dish) => !showNewOnly || dish.isNew);
-    
+    .filter((dish) => dish.inStock > 0)
+    .filter((dish) => !showNewOnly || dish.isNew);
+
   return (
     <>
-      <Header />
+      <Header cartCount={cartCount} />
       <Container className="py-5">
         <div className="text-center mb-4">
           <Button variant="primary" onClick={handleShowNewOnly}>
@@ -64,6 +69,7 @@ function App() {
                 price={dish.price}
                 image={dish.image}
                 isNew={dish.isNew}
+                addToCart={addToCart}
               />
             </Col>
           ))}
