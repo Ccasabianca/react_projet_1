@@ -1,10 +1,18 @@
+import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import Header from "./components/header";
 import Dish from "./components/Dish";
 import Footer from "./components/Footer";
 
 function App() {
+
+  const [showNewOnly, setShowNewOnly] = useState(false);
+
+  const handleShowNewOnly = () => {
+    setShowNewOnly((prev) => !prev);
+  };
+
   const dishes = [
     {
       id: 1,
@@ -13,7 +21,7 @@ function App() {
       image:
         "https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795_960_720.jpg",
       isNew: true,
-      inStock: true,
+      inStock: 1,
     },
     {
       id: 2,
@@ -22,7 +30,7 @@ function App() {
       image:
         "https://cdn.pixabay.com/photo/2014/01/14/22/13/mexican-245240_960_720.jpg",
       isNew: false,
-      inStock: true,
+      inStock: 3,
     },
     {
       id: 3,
@@ -31,16 +39,23 @@ function App() {
       image:
         "https://cdn.pixabay.com/photo/2021/02/04/03/57/mole-5980185_960_720.jpg",
       isNew: false,
-      inStock: false,
+      inStock: 0,
     },
   ];
 
-  let filteredDishes = dishes.filter((dish) => dish.inStock);
-
+  const filteredDishes = dishes
+  .filter((dish) => dish.inStock > 0)
+  .filter((dish) => !showNewOnly || dish.isNew);
+    
   return (
     <>
       <Header />
       <Container className="py-5">
+        <div className="text-center mb-4">
+          <Button variant="primary" onClick={handleShowNewOnly}>
+            {showNewOnly ? "Voir tous les plats" : "Nouveautés uniquement"}
+          </Button>
+        </div>
         <Row className="justify-content-center mt-4">
           {filteredDishes.map((dish) => (
             <Col key={dish.id} xs={12} md={6} lg={4}>

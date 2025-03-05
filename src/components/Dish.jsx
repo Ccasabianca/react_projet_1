@@ -3,7 +3,7 @@ import "../assets/styles/dish.scss";
 
 function Dish({ name, price, image, isNew }) {
   const handleAddToCart = () => {
-    alert(`Le plat ${name} est ajouté à votre panier`);
+    alert(`Le plat ${name} est maintenant dans votre panier`);
   };
 
   return (
