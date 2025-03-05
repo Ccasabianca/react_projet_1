@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Card, Badge, Button } from "react-bootstrap";
+import { CartContext } from "../context/CartContext";
 import "../assets/styles/dish.scss";
 
-function Dish({ name, price, image, isNew, addToCart }) {
+function Dish({ name, price, image, isNew }) {
+  const { addToCart } = useContext(CartContext);
   
   // Ancienne alerte sur clic
   // const handleAddToCart = (name) => {

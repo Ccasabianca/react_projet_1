@@ -6,11 +6,11 @@ import Dish from "./components/Dish";
 import Footer from "./components/Footer";
 
 function App() {
-  // Panier
-  const [cartCount, setCartCount] = useState(0);
-  const addToCart = () => {
-    setCartCount((prev) => prev + 1);
-  };
+  // // Ancien Panier
+  // const [cartCount, setCartCount] = useState(0);
+  // const addToCart = () => {
+  //   setCartCount((prev) => prev + 1);
+  // };
 
   // Bouton new
   const [showNewOnly, setShowNewOnly] = useState(false);
@@ -19,42 +19,17 @@ function App() {
   };
 
   const dishes = [
-    {
-      id: 1,
-      name: "Tacos à l’unité",
-      price: 3,
-      image:
-        "https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795_960_720.jpg",
-      isNew: true,
-      inStock: 12,
-    },
-    {
-      id: 2,
-      name: "Enchiladas",
-      price: 12,
-      image:
-        "https://cdn.pixabay.com/photo/2014/01/14/22/13/mexican-245240_960_720.jpg",
-      isNew: false,
-      inStock: 0,
-    },
-    {
-      id: 3,
-      name: "Mole poblano",
-      price: 15,
-      image:
-        "https://cdn.pixabay.com/photo/2021/02/04/03/57/mole-5980185_960_720.jpg",
-      isNew: false,
-      inStock: 5,
-    },
+    { id: 1, name: "Tacos à l’unité", price: 3, image: "https://cdn.pixabay.com/photo/2016/08/23/08/53/tacos-1613795_960_720.jpg", isNew: true, inStock: 12 },
+    { id: 2, name: "Enchiladas", price: 12, image: "https://cdn.pixabay.com/photo/2014/01/14/22/13/mexican-245240_960_720.jpg", isNew: false, inStock: 0 },
+    { id: 3, name: "Mole poblano", price: 15, image: "https://cdn.pixabay.com/photo/2021/02/04/03/57/mole-5980185_960_720.jpg", isNew: false, inStock: 5 }
   ];
-
   const filteredDishes = dishes.filter(
     (dish) => dish.inStock > 0 && (!showNewOnly || dish.isNew)
   );
   
   return (
     <>
-      <Header cartCount={cartCount} />
+      <Header />
       <Container className="py-5">
         <div className="text-center mb-4">
           <Button variant="primary" onClick={handleShowNewOnly}>
@@ -69,7 +44,6 @@ function App() {
                 price={dish.price}
                 image={dish.image}
                 isNew={dish.isNew}
-                addToCart={addToCart}
               />
             </Col>
           ))}
