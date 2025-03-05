@@ -4,8 +4,16 @@ import { CartContext } from "../context/CartContext";
 import "../assets/styles/dish.scss";
 
 function Dish({ name, price, image, isNew }) {
-  const { addToCart } = useContext(CartContext);
-  
+  const { dispatch } = useContext(CartContext);
+
+  const addToCart = () => {
+    dispatch({ type: "increment" });
+  };
+
+  const removeFromCart = () => {
+    dispatch({ type: "decrement" });
+  };
+
   // Ancienne alerte sur clic
   // const handleAddToCart = (name) => {
   //   alert(`Le plat ${name} est maintenant dans votre panier`);
@@ -22,8 +30,11 @@ function Dish({ name, price, image, isNew }) {
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>Prix: {price}€</Card.Text>
-        <Button variant="primary" onClick={addToCart}>
+        <Button variant="success" onClick={addToCart}>
           Ajouter au panier
+        </Button>
+        <Button variant="danger" onClick={removeFromCart}>
+          Retirer du panier
         </Button>
       </Card.Body>
     </Card>
