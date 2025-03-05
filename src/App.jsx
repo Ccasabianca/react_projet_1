@@ -1,18 +1,19 @@
-import { useState } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Header from "./components/header";
 import Dish from "./components/Dish";
 import Footer from "./components/Footer";
+import { CartContext } from "./context/CartContext";
 
 function App() {
-  // // Ancien Panier
-  // const [cartCount, setCartCount] = useState(0);
-  // const addToCart = () => {
-  //   setCartCount((prev) => prev + 1);
-  // };
+  const { cartCount } = useContext(CartContext);
+  const prevCartCountRef = useRef(cartCount);
 
-  // Bouton new
+  useEffect(() => {
+    prevCartCountRef.current = cartCount;
+  }, [cartCount]);
+
   const [showNewOnly, setShowNewOnly] = useState(false);
   const handleShowNewOnly = () => {
     setShowNewOnly((prev) => !prev);
@@ -59,6 +60,12 @@ function App() {
           <Button variant="primary" onClick={handleShowNewOnly}>
             {showNewOnly ? "Voir tous les plats" : "Nouveautés uniquement"}
           </Button>
+        </div>
+        <div className="text-center mb-4">
+          <p>
+            Le panier est passé de {prevCartCountRef.current} à {cartCount}{" "}
+            articles.
+          </p>
         </div>
         <Row className="justify-content-center mt-4">
           {filteredDishes.map((dish) => (
