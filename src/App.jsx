@@ -48,10 +48,10 @@ function App() {
     },
   ];
 
-  const filteredDishes = dishes
-    .filter((dish) => dish.inStock > 0)
-    .filter((dish) => !showNewOnly || dish.isNew);
-
+  const filteredDishes = dishes.filter(
+    (dish) => dish.inStock > 0 && (!showNewOnly || dish.isNew)
+  );
+  
   return (
     <>
       <Header cartCount={cartCount} />
