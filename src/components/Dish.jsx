@@ -1,23 +1,9 @@
-import { useContext } from "react";
 import { Card, Badge, Button } from "react-bootstrap";
-import { CartContext } from "../context/CartContext";
+import useCart from "../hooks/useCart";
 import "../assets/styles/dish.scss";
 
 function Dish({ name, price, image, isNew }) {
-  const { dispatch } = useContext(CartContext);
-
-  const addToCart = () => {
-    dispatch({ type: "increment" });
-  };
-
-  const removeFromCart = () => {
-    dispatch({ type: "decrement" });
-  };
-
-  // Ancienne alerte sur clic
-  // const handleAddToCart = (name) => {
-  //   alert(`Le plat ${name} est maintenant dans votre panier`);
-  // };
+  const { addToCart, removeFromCart } = useCart();
 
   return (
     <Card className="dish position-relative">

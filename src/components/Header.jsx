@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
-import { CartContext } from "../context/CartContext";
+import { Navbar, Nav, Container } from "react-bootstrap";
+import useCart from "../hooks/useCart";
 import logo from "../assets/images/imgheader.webp";
 import "../assets/styles/header.scss";
 
-const Header = () =>  {
+const Header = () => {
+  const { cartCount } = useCart();
 
-  const { cartCount } = useContext(CartContext);
   return (
     <header>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -30,6 +29,6 @@ const Header = () =>  {
       </Navbar>
     </header>
   );
-}
+};
 
 export default Header;
